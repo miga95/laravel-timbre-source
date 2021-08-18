@@ -1,0 +1,1 @@
+* * * * * cd /usr/local/apache2/htdocs/ && /usr/local/bin/php -f artisan schedule:run  2>&1 >> /var/log/cron.log
