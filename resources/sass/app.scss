@@ -1,0 +1,15 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// slider
+@import  '~@splidejs/splide/dist/css/splide.min.css';
+@import "~swiper/swiper-bundle.min.css";
+
+//perso
+@import 'perso.scss';
