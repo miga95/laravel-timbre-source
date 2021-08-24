@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="{{asset('@fortawesome/fontawesome-free/css/all.min.css')}}">
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link rel="stylesheet" href="{{asset('css/perso.css')}}">
 
 
 

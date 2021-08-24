@@ -19,3 +19,6 @@ Route::get('/', function () {
 Route::get('/vente-actuelle', function () {
     return view('vente.vente-actuelle');
 });
+Route::get('/expertise', function () {
+    return view('expertise');
+});
