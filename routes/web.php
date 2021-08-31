@@ -13,12 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('accueil');
-});
-Route::get('/vente-actuelle', function () {
-    return view('vente.vente-actuelle');
-});
-Route::get('/expertise', function () {
-    return view('expertise');
-});
+Route::get('/', function () {return view('accueil');})->name('accueil');
+Route::get('/vente-actuelle', function () {return view('vente-actuelle');})->name('vente-actuelle');
+Route::get('/expertise', function () {return view('expertise');})->name('expertise');
+Route::get('/vendre-acheter', function () {return view('vendre-acheter');})->name('vendre-acheter');
+Route::get('/maison-roumet', function () {return view('maison-roumet');})->name('maison-roumet');
+Route::get('/contact', function () {return view('contact');})->name('contact');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';

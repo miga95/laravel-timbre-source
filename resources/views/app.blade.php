@@ -14,13 +14,10 @@
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <link rel="stylesheet" href="{{asset('css/perso.css')}}">
 
-
-
-
     </head>
     <body class="container pb-5 ">
         @include('nav')
-    @yield('content')
+        @yield('content')
         <footer>
 
         </footer>

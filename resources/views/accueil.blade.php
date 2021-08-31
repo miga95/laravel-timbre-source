@@ -17,7 +17,7 @@
                 En fonction de votre centre d'intérêt, veuillez nous contacter dès aujourd'hui pour en savoir plus sur nos offres actuelles ou pour savoir comment nous pouvons vous aider avec vos besoins.
             </p>
         </div>
-        <img src="{{asset('img/magasin.jpg')}}" alt="" width="400px" class="ml-5">
+
     </div>
 
     <div class="container mt-5 d-flex-column justify-content-center w-75">
