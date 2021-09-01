@@ -13,9 +13,12 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <link rel="stylesheet" href="{{asset('css/perso.css')}}">
+        <!-- Slider css -->
+        <link rel="stylesheet" href="node_modules/@splidejs/splide/dist/css/splide.min.css">
+
 
     </head>
-    <body class="container pb-5 ">
+    <body class="container mx-auto pb-5 ">
         @include('nav')
         @yield('content')
         <footer>

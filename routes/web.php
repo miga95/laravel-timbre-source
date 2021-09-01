@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {return view('accueil');})->name('accueil');
-Route::get('/vente-actuelle', function () {return view('vente-actuelle');})->name('vente-actuelle');
+Route::get('/vente-actuelle', function () {return view('vente.vente-actuelle');})->name('vente-actuelle');
+Route::get('/vente-ancienne', function () {return view('vente.vente-ancienne');})->name('vente-ancienne');
 Route::get('/expertise', function () {return view('expertise');})->name('expertise');
 Route::get('/vendre-acheter', function () {return view('vendre-acheter');})->name('vendre-acheter');
 Route::get('/maison-roumet', function () {return view('maison-roumet');})->name('maison-roumet');
