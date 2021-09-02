@@ -29,7 +29,7 @@
                 Nous travaillons de manière discrète et transparente avec les acheteurs et les vendeurs de timbres tout au long de l'année, indépendamment du calendrier des ventes. Notre équipe apporte des décennies d'expertise et de passion à chaque interaction, soutenue par une connaissance inégalée de philatélie et du marché.
             </p>
         </div>
-        <a href="" class="block w-25 bg-pink-800 text-xl text-white text-center mx-auto p-2 rounded-lg" >Nous contacter</a>
+        <a href="" class="block w-1/4 bg-pink-800 text-xl text-white text-center mx-auto p-2 rounded-lg" >Nous contacter</a>
     </div>
 
     <div class="w-3/5 mx-auto">
@@ -45,7 +45,7 @@
                 </ul>
             </div>
         </div>
-        <a href="" class="block w-25 bg-pink-800 text-xl text-white text-center mx-auto p-2 rounded-lg my-8" >Créer mon compte gourmet</a>
+        <a href="" class="block w-1/4 bg-pink-800 text-xl text-white text-center mx-auto p-2 rounded-lg my-8" >Créer mon compte gourmet</a>
     </div>
 </main>
 @endsection

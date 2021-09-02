@@ -1,7 +1,7 @@
 @extends('app')
 @section('content')
-    <div class="container d-flex justify-content-center mt-5">
-        <img src="{{asset('img/expertise1.jpg')}}" alt="" width="40%" height="500px">
+    <div class="my-12">
+        <img class="mx-auto" src="{{asset('img/expertise1.jpg')}}" alt="" width="50%">
     </div>
     {{--    espertise philatélique--}}
     <div class="w-3/5 mx-auto my-12">
@@ -19,7 +19,7 @@
             recommandée ou valeur déclarée avec avis de réception.
         </p>
     </div>
-    {{--    experts de la maison roumet--}}
+    {{--    Experts de la maison roumet--}}
     <div class="w-3/4 mx-auto my-12">
         <h1 class="text-center text-4xl text-purple-400 py-3">Experts de la Maison Roumet</h1>
         <hr class="w-12 mx-auto text-purple-400 ">
@@ -35,7 +35,7 @@
             <h2 class="text-center text-2xl mt-12" >Octave Roumet (1879 - 1953)</h2>
             <p class="text-center italic" > Expert à la cour d'appel de Paris</p>
 
-            <a href="" class="block w-25 bg-pink-800 text-xl text-white text-center mx-auto p-2 rounded-lg my-12" >Commander un expert</a>
+            <a href="" class="block w-1/5 bg-pink-800 text-xl text-white text-center mx-auto p-2 rounded-lg my-12">Commander un expert</a>
         </div>
 
     </div>

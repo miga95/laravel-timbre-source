@@ -45,7 +45,7 @@
         <p class="text-xl text-justify py-8">Nous exposons des lots sur RDV, dès réception du catalogue. UT wisi  sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam.
             Pendant la durée de l'exposition et sous réserve de modifications sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam,
         </p>
-        <a href="" class="block w-25 bg-pink-800 text-xl text-white text-center mx-auto p-2 rounded-lg" >Consulter notre catalogue</a>
+        <a href="" class="block w-1/4 bg-pink-800 text-xl text-white text-center mx-auto p-2 rounded-lg" >Consulter notre catalogue</a>
 {{-- timbres --}}
         <div class="w-3/5 mx-auto my-20">
             <div class=" flex justify-around py-10">
@@ -75,7 +75,7 @@
         </div>
     </div>
 
-    <div class="splide mt-10 d-flex justify-content-center"  >
+    <div class="splide py-8"  >
         <div class="splide__track" style="width: 50rem; height: 20rem;">
             <ul class="splide__list">
                 <li class="splide__slide"><img src="{{asset('img/timbres/napol.jpg')}}" alt=""></li>
