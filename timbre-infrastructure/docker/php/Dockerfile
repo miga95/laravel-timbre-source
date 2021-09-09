@@ -49,7 +49,7 @@ USER docaret
 COPY app.ini /etc/php7/conf.d/app.ini
 
 WORKDIR /usr/local/apache2/htdocs
-
+ENV PHP_MEMORY_LIMIT=512M
 CMD composer install --no-interaction
 CMD php artisan key:generate
 CMD php artisan migrate
