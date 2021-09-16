@@ -15,19 +15,20 @@ class CreateLotsTable extends Migration
     {
         Schema::create('lots', function (Blueprint $table) {
             $table->id();
-            $table->smallInteger('vente_id');
-            $table->text('surcategorie_id');
-            $table->text('categorie_id');
-            $table->integer('nolot');
-            $table->text('description');
-            $table->string('qualite');
-            $table->string('photo');
-            $table->integer('nb');
-            $table->integer('cote');
-            $table->integer('depart');
-            $table->integer('atteint');
-            $table->integer('top');
-            $table->timestamp('updated_at');
+            $table->string('titre');
+            $table->integer('nolot')->nullable();
+            $table->text('description')->nullable();
+            $table->string('qualite')->nullable();
+            $table->string('photo')->nullable();
+            $table->integer('nb')->nullable();
+            $table->integer('cote')->nullable();
+            $table->integer('depart')->nullable();
+            $table->integer('atteint')->nullable();
+            $table->integer('top')->nullable();
+            $table->timestamps();
+            $table->unsignedBigInteger('vente_id')->nullable();
+            $table->unsignedBigInteger('surcategorie_id')->nullable();
+            $table->unsignedBigInteger('categorie_id')->nullable();
         });
     }
 

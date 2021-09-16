@@ -18,10 +18,7 @@ class CreateVentesTable extends Migration
             $table->integer('numeroVente')->nullable();
             $table->dateTime('cloture')->nullable();
             $table->text('info')->nullable();
-            $table->unsignedBigInteger('lot_id')->nullable();
-
-            $table->foreign('lot_id')->references('id')->on('lots')->onDelete('set null');
-
+            $table->timestamps();
         });
 
 

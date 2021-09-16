@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=devic e-width, initial-scale=1">
-
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>Roumet</title>
 
         <!-- Fonts -->
@@ -27,5 +27,16 @@
 
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/splide.js') }}"></script>
+    <script>
+        @if(session('success'))
+        toastr.success("{!! session('success') !!}")
+        @endif
+        @if(session('warning'))
+        toastr.warning("{!! session('warning') !!}")
+        @endif
+        @if(session('error'))
+        toastr.error("{!! session('error') !!}")
+        @endif
+    </script>
     </body>
 </html>

@@ -16,19 +16,15 @@ class CreateCategorieSurcategorieTable extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->unsignedBigInteger('lot_id')->nullable();
-
-            $table->foreign('lot_id')->references('id')->on('lots')->onDelete('set null');
+            $table->string('name')->nullable();
+            $table->timestamps();
 
         });
 
         Schema::create('surcategories', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->unsignedBigInteger('lot_id')->nullable();
-
-            $table->foreign('lot_id')->references('id')->on('lots')->onDelete('set null');
+            $table->string('name')->nullable();
+            $table->timestamps();
         });
 
 

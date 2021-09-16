@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @property int $id
  * @property int $vente_id
+ * @property string $titre
  * @property string $surcategorie_id
  * @property string $categorie_id
  * @property string $qualite
@@ -26,8 +27,35 @@ class Lot extends Model
     use HasFactory;
     protected $fillable = [
         'description',
-
+        'titre',
+        'vente_id',
+        'surcategorie_id',
+        'categorie_id',
+        'qualite',
+        'nolot',
+        'photo',
+        'nb',
+        'cote',
+        'depart',
+        'atteint',
+        'top'
     ];
+
+    /**
+     * @return string
+     */
+    public function getTitre(): string
+    {
+        return $this->titre;
+    }
+
+    /**
+     * @param string $titre
+     */
+    public function setTitre(string $titre): void
+    {
+        $this->titre = $titre;
+    }
 
 
     /**
@@ -231,4 +259,8 @@ class Lot extends Model
         $this->top = $top;
     }
 
+    public function vente()
+    {
+        return $this->belongsTo(Vente::class);
+    }
 }
