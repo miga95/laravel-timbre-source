@@ -7,6 +7,8 @@ use App\Http\Controllers\SurcategorieController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VenteController;
 use Illuminate\Support\Facades\Route;
+use Symfony\Component\HttpFoundation\Session\Session;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,11 +24,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {return view('accueil');})->name('accueil');
 Route::get('/vente-actuelle', function () {return view('vente.vente-actuelle');})->name('vente-actuelle');
 Route::get('/vente-ancienne', function () {return view('vente.vente-ancienne');})->name('vente-ancienne');
-Route::get('/expertise', function () {return view('expertise');})->name('expertise');
+Route::get('/expertise', function () {return view('expertise');})->middleware(['hide'])->name('expertise');
 Route::get('/vendre-acheter', function () {return view('vendre-acheter');})->name('vendre-acheter');
 Route::get('/maison-roumet', function () {return view('maison-roumet');})->name('maison-roumet');
 Route::get('/contact', function () {return view('contact');})->name('contact');
 
+//Contrer aspirateur de site
+Route::get('/suspect', function (\Illuminate\Http\Request $request) {
+    $request->session()->put(['robot'=>true]);
+})->name('suspect');
 
 //post
 Route::post('/admin/postVente', [VenteController::class, 'postVente'])->middleware(['admin'])->name('postVente ');

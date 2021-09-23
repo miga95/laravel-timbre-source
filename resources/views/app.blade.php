@@ -18,8 +18,15 @@
 
 
     </head>
+
     <body class="container mx-auto pb-5 ">
+        @if(session()->get('robot'))
+            {{dd('Bloqué')}}
+
+        @endif
+        <a href="{{route('suspect')}}" class="block" style="width: 1px; height: 1px"><img src="{{asset('img/magasin.jpg')}}f" width="1px" height="1px" border="0"></a>
         @include('nav')
+
         @yield('content')
         <footer>
 
