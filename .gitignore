@@ -13,6 +13,7 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+timbre-infrastructure/data
 composer.lock
 package-lock.json
 /public/js/
