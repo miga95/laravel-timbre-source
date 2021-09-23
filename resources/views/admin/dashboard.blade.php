@@ -11,11 +11,41 @@
 
 
 <div class="max-w-7xl my-12 mx-auto sm:px-6 lg:px-8 flex">
-    <div class="p-6 my-10 bg-gray-300  border-gray-200 flex flex-col w-1/5">
-        <a class="my-5 " href={{route('formVente')}}>Vente</a>
+    <div class="p-6 my-10 bg-gray-300  border-gray-200 flex flex-col w-1/5 rounded">
+        <!--Vente-->
+        <x-dropdown>
+            <x-slot name="trigger" >
+                <button class="my-5 ">Vente</button>
+            </x-slot>
+            <x-slot name="content" >
+                <x-dropdown-link>
+                    <a class="my-5 " href={{route('formVente')}}>Toutes les ventes</a>
+                </x-dropdown-link>
+                <x-dropdown-link>
+                    <a class="my-5 " href={{route('formVente')}}>Créer Vente</a>
+                </x-dropdown-link>
+
+            </x-slot>
+        </x-dropdown>
+
+        <x-dropdown>
+            <x-slot name="trigger" >
+                <button class="my-5 ">Lot</button>
+            </x-slot>
+            <x-slot name="content" >
+                <x-dropdown-link>
+                    <a class="my-5 " href={{route('formLot')}}>Tous les lots</a>
+                </x-dropdown-link>
+                <x-dropdown-link>
+                    <a class="my-5" href={{route('formLot')}}>Lot</a>
+                </x-dropdown-link>
+
+            </x-slot>
+        </x-dropdown>
+
         <a class="my-5" href={{route('formSurcategorie')}}>Surcategorie</a>
         <a class="my-5" href={{route('formCategorie')}}>Categorie</a>
-        <a class="my-5" href={{route('formLot')}}>Lot</a>
+
     </div>
 
     @yield('form')

@@ -88,6 +88,11 @@
                                 <x-dropdown-link :href="route('admin-dashboard')">
                                     {{ __('Dashboard') }}
                                 </x-dropdown-link>
+
+                                <x-dropdown-link :href="route('show-profile')">
+                                    {{ __('Profil') }}
+                                </x-dropdown-link>
+
                                 <x-dropdown-link :href="route('logout')"
                                                  onclick="event.preventDefault();
                                                 this.closest('form').submit();">

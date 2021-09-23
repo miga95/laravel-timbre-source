@@ -7,7 +7,7 @@
     <div class="w-3/5 mx-auto my-12">
         <h1 class="text-center text-4xl text-purple-400 py-3">Expertise philatélique</h1>
         <hr class="w-12 mx-auto text-purple-400">
-        <p class="text-xl text-justify py-8">L'Expertise consiste à déterminer précisément l'état civil d'un timbre : le
+        <p class="text-xl text-justify py-8">{{__("L'Expertise consiste à déterminer précisément l'état civil d'un timbre : le
             numéro de timbre suivant un catalogue, son état, sa couleur, et son authenticité.
             Afin d'effectuer l'expertise de vos timbres ou lettres dans les meilleures conditions, voici ces quelques
             informations :
@@ -16,7 +16,7 @@
             l'expertise vous sera communiqué dans la plupart des cas sous 24 heures. Pour les examens plus complexes les
             délais peuvent être modifiés.
             Si vous expédiez vos timbres par la voie postale, effectuez l'envoi avec protection efficace, par lettre
-            recommandée ou valeur déclarée avec avis de réception.
+            recommandée ou valeur déclarée avec avis de réception.")}}
         </p>
     </div>
     {{--    Experts de la maison roumet--}}

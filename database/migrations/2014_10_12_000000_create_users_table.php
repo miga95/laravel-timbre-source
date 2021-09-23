@@ -23,7 +23,6 @@ class CreateUsersTable extends Migration
             $table->date('date_naissance')->nullable();
             $table->boolean('newsletter')->nullable();
             $table->string('password');
-
             $table->rememberToken();
             $table->timestamps();
         });

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use DateTimeImmutable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -18,6 +19,7 @@ use Laravel\Sanctum\HasApiTokens;
  * @property DateTimeImmutable|null $date_naissance;
  * @property int $newsletter;
  * @property int $role_id;
+ * @property Collection|Adresse[] $adresses;
  */
 class User extends Authenticatable
 {
@@ -29,10 +31,13 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
+        'civilite',
+        'nom',
         'prenom',
         'email',
         'password',
-        'role_id'
+        'date_naissance',
+        'role_id',
     ];
 
     /**
@@ -164,6 +169,11 @@ class User extends Authenticatable
     public function setNewsletter(int $newsletter): void
     {
         $this->newsletter = $newsletter;
+    }
+
+    public function adresses()
+    {
+       return $this->hasMany(Adresse::class);
     }
 
 }

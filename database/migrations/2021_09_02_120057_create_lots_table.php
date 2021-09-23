@@ -26,6 +26,8 @@ class CreateLotsTable extends Migration
             $table->integer('atteint')->nullable();
             $table->integer('top')->nullable();
             $table->timestamps();
+            $table->timestamp('start_bid');
+            $table->timestamp('stop_bid');
             $table->unsignedBigInteger('vente_id')->nullable();
             $table->unsignedBigInteger('surcategorie_id')->nullable();
             $table->unsignedBigInteger('categorie_id')->nullable();
