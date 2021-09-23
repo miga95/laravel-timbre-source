@@ -6,7 +6,6 @@
             {{ __('Dashboard') }}
         </h2>
     </div>
-
 </div>
 
 <div class="py-12">

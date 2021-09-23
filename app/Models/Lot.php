@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+
+use DateTimeImmutable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -20,14 +22,16 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $depart
  * @property int $atteint
  * @property int $top
+ * @property DateTimeImmutable|null $start_bid
+ * @property DateTimeImmutable|null $stop_bid
  */
 
 class Lot extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'description',
         'titre',
+        'description',
         'vente_id',
         'surcategorie_id',
         'categorie_id',
@@ -38,7 +42,9 @@ class Lot extends Model
         'cote',
         'depart',
         'atteint',
-        'top'
+        'top',
+        'start_bid',
+        'stop_bid',
     ];
 
     /**
@@ -258,6 +264,39 @@ class Lot extends Model
     {
         $this->top = $top;
     }
+
+    /**
+     * @return DateTimeImmutable|null
+     */
+    public function getStartBid(): ?DateTimeImmutable
+    {
+        return $this->start_bid;
+    }
+
+    /**
+     * @param DateTimeImmutable|null $start_bid
+     */
+    public function setStartBid(?DateTimeImmutable $start_bid): void
+    {
+        $this->start_bid = $start_bid;
+    }
+
+    /**
+     * @return DateTimeImmutable|null
+     */
+    public function getStopBid(): ?DateTimeImmutable
+    {
+        return $this->stop_bid;
+    }
+
+    /**
+     * @param DateTimeImmutable|null $stop_bid
+     */
+    public function setStopBid(?DateTimeImmutable $stop_bid): void
+    {
+        $this->stop_bid = $stop_bid;
+    }
+
 
     public function vente()
     {

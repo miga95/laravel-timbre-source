@@ -14,6 +14,7 @@ class VenteController extends Controller
         $this->categorieRepository = $categorieRepository;
     }
 
+
     public function postVente(Request $request){
         Vente::create([
             'numeroVente' => $request->numeroVente,
