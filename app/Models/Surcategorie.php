@@ -2,13 +2,16 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property int $id;
  * @property string $name;
- * @property int $lot_id;
+ *
+ * @property Collection|Lot[] $lots;
+ * @property Collection|Categorie[] $categories;
  */
 
 class Surcategorie extends Model
@@ -37,21 +40,18 @@ class Surcategorie extends Model
         $this->name = $name;
     }
 
-    /**
-     * @return int
-     */
-    public function getLotId(): int
+
+
+    public function lots()
     {
-        return $this->lot_id;
+        return $this->hasMany(Lot::class);
     }
 
-    /**
-     * @param int $lot_id
-     */
-    public function setLotId(int $lot_id): void
+    public function categories()
     {
-        $this->lot_id = $lot_id;
+        return $this->hasMany(Categorie::class);
     }
+
     use HasFactory;
 
 }

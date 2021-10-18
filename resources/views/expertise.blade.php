@@ -1,12 +1,12 @@
 @extends('app')
 @section('content')
-    <div class="my-12">
+    <div class="mt-36">
         <img class="mx-auto" src="{{asset('img/expertise1.jpg')}}" alt="" width="50%">
     </div>
     {{--    espertise philatélique--}}
-    <div class="w-3/5 mx-auto my-12">
-        <h1 class="text-center text-4xl text-purple-400 py-3">Expertise philatélique</h1>
-        <hr class="w-12 mx-auto text-purple-400">
+    <div class="w-3/5 mx-auto my-20">
+        <h1 class="text-center text-4xl text-purple-400 py-3">{{__("Expertise philatélique")}}</h1>
+        <hr class="w-28 mx-auto text-purple-400">
         <p class="text-xl text-justify py-8">{{__("L'Expertise consiste à déterminer précisément l'état civil d'un timbre : le
             numéro de timbre suivant un catalogue, son état, sa couleur, et son authenticité.
             Afin d'effectuer l'expertise de vos timbres ou lettres dans les meilleures conditions, voici ces quelques
@@ -20,71 +20,72 @@
         </p>
     </div>
     {{--    Experts de la maison roumet--}}
-    <div class="w-3/4 mx-auto my-12">
-        <h1 class="text-center text-4xl text-purple-400 py-3">Experts de la Maison Roumet</h1>
-        <hr class="w-12 mx-auto text-purple-400 ">
-        <div class="py-12">
-            <h2 class="text-center text-2xl mt-12"  >Alexandre Roumet</h2>
-            <p class="text-center italic" > Expert à la cour d'appel de Paris</p>
+    <div class="w-3/4 mx-auto my-20">
+        <h1 class="text-center text-4xl text-purple-400 py-3">{{__("Experts de la Maison Roumet")}}</h1>
+        <hr class="w-28 mx-auto text-purple-400 ">
 
-            <h2 class="text-center text-2xl mt-12" >Philippe Roumet (1921 - 2010)</h2>
-            <p class="text-center italic" > Expert à la cour d'appel de Paris</p>
-            <p class="text-center italic" > Expert près de Tribunal</p>
-            <p class="text-center italic" > de Grande Instance de la Seine</p>
+        <h2 class="text-center text-2xl mt-12">{{__("Alexandre Roumet")}}</h2>
+        <p class="text-center italic">{{__("Expert à la cour d'appel de Paris")}}</p>
 
-            <h2 class="text-center text-2xl mt-12" >Octave Roumet (1879 - 1953)</h2>
-            <p class="text-center italic" > Expert à la cour d'appel de Paris</p>
+        <h2 class="text-center text-2xl mt-12">{{__("Philippe Roumet (1921 - 2010)")}}</h2>
+        <p class="text-center italic">{{__("Expert à la cour d'appel de Paris")}}</p>
+        <p class="text-center italic">{{__("Expert près de Tribunal")}}</p>
+        <p class="text-center italic">{{__("de Grande Instance de la Seine")}}</p>
 
-            <a href="" class="block w-1/5 bg-pink-800 text-xl text-white text-center mx-auto p-2 rounded-lg my-12">Commander un expert</a>
-        </div>
+        <h2 class="text-center text-2xl mt-12">{{__("Octave Roumet (1879 - 1953)")}}</h2>
+        <p class="text-center italic">{{__("Expert à la cour d'appel de Paris")}}</p>
+        {{--<a href="" class="block w-1/5 bg-pink-800 text-xl text-white text-center mx-auto p-2 rounded-lg my-12">Commander un expert</a>--}}
 
     </div>
 
-    <div class="w-3/5 mx-auto my-12">
-        <h1 class="text-center  text-4xl text-purple-400 py-3">Certificat d'authenticité</h1>
-        <hr class="w-12 mx-auto text-purple-400">
-        <p class="text-xl text-justify py-8">Lorem ipsum dolor sit ameti , consectetuer adpiscing eluit, sed diam nonummy nibh
-            eioiv</p>
+    <div class="w-3/5 mx-auto my-20">
+        <h1 class="text-center  text-4xl text-purple-400 py-3">{{__("Certificat d'authenticité")}}</h1>
+        <hr class="w-28 mx-auto text-purple-400">
+        <p class="text-xl text-justify py-8">{{__("Lorem ipsum dolor sit ameti , consectetuer adpiscing eluit, sed diam
+            nonummy nibh
+            eioiv")}}</p>
     </div>
 
     <div class="w-3/5 mx-auto my-12">
-        <h1 class="text-center  text-4xl text-purple-400 py-3">Questions fréquentes</h1>
-        <hr class="w-12 mx-auto text-purple-400">
+        <h1 class="text-center  text-4xl text-purple-400 py-3">{{__("Questions fréquentes")}}</h1>
+        <hr class="w-28 mx-auto text-purple-400">
         <div class="my-12">
             <div class="flex justify-between">
-                <p style="font-size: 1.5rem">Qu'est-ce qu'une demande d'estimation ?</p>
-                <a class="text-right" href=""><i class="fas fa-plus"></i></a>
+                <p style="font-size: 1.5rem">{{__("Qu'est-ce qu'une demande d'estimation ?")}}</p>
+                {{--<a class="text-right" href=""><i class="fas fa-plus"></i></a>--}}
             </div>
             <hr>
             <div class="flex justify-between">
-                <p style="font-size: 1.5rem">Comment sont déterminées les estimations ?</p>
-                <a class="text-right" href=""><i class="fas fa-plus"></i></a>
+                <p style="font-size: 1.5rem">{{__("Comment sont déterminées les estimations ?")}}</p>
+                {{--<a class="text-right" href=""><i class="fas fa-plus"></i></a>--}}
             </div>
             <hr>
             <div class="flex justify-between">
-                <p style="font-size: 1.5rem">En combien de temps reçois-je une estimation ?</p>
-                <a class="text-right" href=""><i class="fas fa-plus"></i></a>
+                <p style="font-size: 1.5rem">{{__("En combien de temps reçois-je une estimation ?")}}</p>
+                {{--<a class="text-right" href=""><i class="fas fa-plus"></i></a>--}}
             </div>
             <hr>
             <div class="flex justify-between">
-                <p style="font-size: 1.5rem">J'ai bien envoyé une requête, mais je n'ai pas reçu d'estimation. Pourquoi ?</p>
-                <a class="text-right" href=""><i class="fas fa-plus"></i></a>
+                <p style="font-size: 1.5rem">{{__("J'ai bien envoyé une requête, mais je n'ai pas reçu d'estimation. Pourquoi
+                    ?")}}</p>
+                {{--<a class="text-right" href=""><i class="fas fa-plus"></i></a>--}}
             </div>
             <hr>
             <div class="flex justify-between">
-                <p style="font-size: 1.5rem">L'estimation fournie est-elle définitive ?</p>
-                <a class="text-right" href=""><i class="fas fa-plus"></i></a>
+                <p style="font-size: 1.5rem">{{__("L'estimation fournie est-elle définitive ?")}}</p>
+                {{--<a class="text-right" href=""><i class="fas fa-plus"></i></a>--}}
             </div>
             <hr>
             <div class="flex justify-between">
-                <p style="font-size: 1.5rem">Est-ce possible de demander une estimation même si je ne suis pas sûr de vendre mes
-                    timbres ?</p>
-                <a class="text-right" href=""><i class="fas fa-plus"></i></a>
+                <p style="font-size: 1.5rem">{{__("Est-ce possible de demander une estimation même si je ne suis pas sûr de
+                    vendre mes
+                    timbres ?")}}</p>
+                {{--<a class="text-right" href=""><i class="fas fa-plus"></i></a>--}}
             </div>
             <hr>
             <div class="flex justify-between">
-                <p style="font-size: 1.5rem">Quelles sont les conditions de vente de la Maison Roumet ?</p>
-                <a class="text-right" href=""><i class="fas fa-plus"></i></a>
+                <p style="font-size: 1.5rem">{{__("Quelles sont les conditions de vente de la Maison Roumet ?")}}</p>
+                {{--<a class="text-right" href=""><i class="fas fa-plus"></i></a>--}}
             </div>
 
         </div>

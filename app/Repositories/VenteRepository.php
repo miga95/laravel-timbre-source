@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 
+use App\Models\Lot;
 use App\Models\Vente;
 use Illuminate\database\Eloquent\Collection;
 
@@ -17,6 +18,15 @@ class VenteRepository
     }
 
     /**
+     * @param int $id
+     * @return Vente
+     */
+    public function find(int $id):Vente
+    {
+        return Vente::find($id);
+    }
+
+    /**
      * @param int $numeroVente
      * @return mixed
      */
@@ -24,4 +34,16 @@ class VenteRepository
     {
         return Vente::where('numeroVente', $numeroVente)->first();
     }
+
+    /**
+     * @return Vente|null
+     */
+    public function findLastVente(): ?Vente
+    {
+        return Vente::orderByDesc('created_at')->first();
+    }
+
+
+
+
 }

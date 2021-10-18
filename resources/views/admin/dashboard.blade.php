@@ -10,8 +10,8 @@
 </div>
 
 
-<div class="max-w-7xl my-12 mx-auto sm:px-6 lg:px-8 flex">
-    <div class="p-6 my-10 bg-gray-300  border-gray-200 flex flex-col w-1/5 rounded">
+<div class="max-w-full my-16 mx-auto sm:px-6 lg:px-8 flex">
+    <div class="p-6  bg-gray-300  flex flex-col w-1/5 rounded">
         <!--Vente-->
         <x-dropdown>
             <x-slot name="trigger" >
@@ -19,7 +19,7 @@
             </x-slot>
             <x-slot name="content" >
                 <x-dropdown-link>
-                    <a class="my-5 " href={{route('formVente')}}>Toutes les ventes</a>
+                    <a class="my-5 " href={{route('show-ventes')}}>Toutes les ventes</a>
                 </x-dropdown-link>
                 <x-dropdown-link>
                     <a class="my-5 " href={{route('formVente')}}>Créer Vente</a>
@@ -34,10 +34,13 @@
             </x-slot>
             <x-slot name="content" >
                 <x-dropdown-link>
-                    <a class="my-5 " href={{route('formLot')}}>Tous les lots</a>
+                    <a class="my-5 " href={{route('show-lots')}}>Tous les lots</a>
                 </x-dropdown-link>
                 <x-dropdown-link>
                     <a class="my-5" href={{route('formLot')}}>Lot</a>
+                </x-dropdown-link>
+                <x-dropdown-link>
+                    <a class="my-5" href={{route('import-form')}}>Importer lots</a>
                 </x-dropdown-link>
 
             </x-slot>

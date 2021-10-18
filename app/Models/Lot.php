@@ -6,6 +6,7 @@ namespace App\Models;
 use DateTimeImmutable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Ramsey\Collection\Collection;
 
 /**
  * @property int $id
@@ -24,6 +25,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $top
  * @property DateTimeImmutable|null $start_bid
  * @property DateTimeImmutable|null $stop_bid
+ *
+ * @property Collection|Offre[] $offres
  */
 
 class Lot extends Model
@@ -302,4 +305,20 @@ class Lot extends Model
     {
         return $this->belongsTo(Vente::class);
     }
+
+    public function surcategorie()
+    {
+        return $this->belongsTo(Surcategorie::class);
+    }
+
+    public function categorie()
+    {
+        return $this->belongsTo(Categorie::class);
+    }
+
+    public function offres()
+    {
+        return $this->hasMany(Offre::class);
+    }
+
 }

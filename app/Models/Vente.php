@@ -3,8 +3,10 @@
 namespace App\Models;
 
 use DateTimeImmutable;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * @property int $id;
@@ -12,11 +14,13 @@ use Illuminate\Database\Eloquent\Model;
  * @property DateTimeImmutable|null $cloture;
  * @property string $info;
  * @property int $lot_id;
+ * @property string $catalogue;
+ * @property Collection|Lot[] $lots;
  */
 
 class Vente extends Model
 {
-    protected $fillable = ['numeroVente','cloture','info'];
+    protected $fillable = ['numeroVente','cloture','info','catalogue'];
 
     use HasFactory;
     /**
@@ -49,6 +53,22 @@ class Vente extends Model
     public function getCloture(): ?DateTimeImmutable
     {
         return $this->cloture;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCatalogue(): string
+    {
+        return $this->catalogue;
+    }
+
+    /**
+     * @param string $catalogue
+     */
+    public function setCatalogue(string $catalogue): void
+    {
+        $this->catalogue = $catalogue;
     }
 
     /**
@@ -91,6 +111,13 @@ class Vente extends Model
         $this->lot_id = $lot_id;
     }
 
+    /**
+     * @return HasMany
+     */
+    public function lots(): HasMany
+    {
+        return $this->hasMany(Lot::class);
+    }
 
 
 }

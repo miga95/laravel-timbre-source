@@ -2,7 +2,10 @@
 
 use App\Http\Controllers\AdresseController;
 use App\Http\Controllers\CategorieController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\LangController;
 use App\Http\Controllers\LotController;
+use App\Http\Controllers\PagesController;
 use App\Http\Controllers\SurcategorieController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VenteController;
@@ -20,18 +23,26 @@ use Symfony\Component\HttpFoundation\Session\Session;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Public get
+Route::get('/', [PagesController::class, 'showAccueil'])->name('accueil');
+Route::get('/vente-actuelle', [PagesController::class, 'showVenteActuelle'])->name('vente-actuelle');
+Route::get('/vente-ancienne',[PagesController::class, 'showVenteAncienne'])->name('vente-ancienne');
+Route::get('/expertise', [PagesController::class, 'showExpertise'])->name('expertise');
+Route::get('/vendre-acheter', [PagesController::class, 'showVendreAcheter'])->name('vendre-acheter');
+Route::get('/maison-roumet', [PagesController::class, 'showMaisonRoumet'])->name('maison-roumet');
+Route::get('/contact',[PagesController::class, 'showContact'])->name('contact');
+Route::get('/pdf',[VenteController::class,'downloadCatalogue'])->name('download-catalogue');
+Route::get('/lot/{id}',[LotController::class,'showLotById'])->name('show-lot');
+Route::get('vente/{venteId}/surcategorie/{surcategorieId}/categorie/{categorieId}',[LotController::class,'showSurcategoriesAndCategoriesofLastVente'])->name('show-surcategories-of-last-vente');
+Route::get('lang/home',[LangController::class,'index']);
+Route::get('lang/change',[LangController::class,'change'])->name('changeLang');
+Route::get('mail',function(){return view('mail');});
 
-Route::get('/', function () {return view('accueil');})->name('accueil');
-Route::get('/vente-actuelle', function () {return view('vente.vente-actuelle');})->name('vente-actuelle');
-Route::get('/vente-ancienne', function () {return view('vente.vente-ancienne');})->name('vente-ancienne');
-Route::get('/expertise', function () {return view('expertise');})->middleware(['hide'])->name('expertise');
-Route::get('/vendre-acheter', function () {return view('vendre-acheter');})->name('vendre-acheter');
-Route::get('/maison-roumet', function () {return view('maison-roumet');})->name('maison-roumet');
-Route::get('/contact', function () {return view('contact');})->name('contact');
+//Route::get('vente/{venteId}/surcategorie/{surcategorieId}/categorie/{categorieId}',[LotController::class,'showLotsFilteredBySurcategorieAndCategorie'])->name('show-filtered-lots');
 
 //Contrer aspirateur de site
 Route::get('/suspect', function (\Illuminate\Http\Request $request) {
-    $request->session()->put(['robot'=>true]);
+    $request->session()->put(['robot' => true]);
 })->name('suspect');
 
 //post
@@ -42,6 +53,8 @@ Route::post('/admin/postSurcategorie',[SurcategorieController::class,'postSurcat
 Route::post('/admin/import',[LotController::class,'import'])->middleware(['admin'])->name('import');
 Route::post('/post-profile',[UserController::class,'postProfile'])->middleware(['auth'])->name('post-profile');
 Route::post('/post-adresse',[AdresseController::class,'postAdresse'])->middleware(['auth'])->name('post-adresse');
+Route::post('/post-contact',[ContactController::class,'postContact'])->name('post-contact');
+
 
 
 
@@ -59,6 +72,8 @@ Route::get('/admin/formLot',[LotController::class,'formLot'])->middleware(['admi
 Route::get('/admin/formCategorie',[CategorieController::class,'showFormCategorie'])->middleware(['admin'])->name('formCategorie');
 Route::get('/admin/formSurcategorie',[SurcategorieController::class,'showFormSurcategorie'])->middleware(['admin'])->name('formSurcategorie');
 Route::get('/admin/import-form',[LotController::class,'importForm'])->middleware(['admin'])->name('import-form');
+Route::get('/admin/lots',[LotController::class,'showLots'])->middleware(['admin'])->name('show-lots');
+Route::get('/admin/ventes',[VenteController::class,'showVentes'])->middleware(['admin'])->name('show-ventes');
 
 
 

@@ -23,4 +23,13 @@ class SurcategorieRepository
     {
         return Surcategorie::where('name', $name)->first();
     }
+
+    /**
+     * @param int $id
+     * @return Surcategorie|null
+     */
+    public function find(int $id): ? Surcategorie
+    {
+        return Surcategorie::find($id);
+    }
 }
