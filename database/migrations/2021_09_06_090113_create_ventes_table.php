@@ -19,6 +19,7 @@ class CreateVentesTable extends Migration
             $table->dateTime('cloture')->nullable();
             $table->text('info')->nullable();
             $table->timestamps();
+            $table->text('catalogue');
         });
 
 

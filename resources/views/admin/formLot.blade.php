@@ -33,11 +33,17 @@
                     </tr>
                     <tr>
                         <th><label for="vente">Numero de vente</label></th>
-                        <td><input id="vente" name="vente" type="text" class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></td>
+                        <td><input id="vente" name="vente" type="number" class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></td>
                     </tr>
                     <tr>
                         <th><label for="surcategorie">Surcategorie</label></th>
-                        <td> <input id="surcategorie" name="surcategorie" type="text" class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></td>
+                        <td>
+                            <select id="surcategorie" name="surcategorie" type="select" class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                                @foreach($surcategories as $surcategorie)
+                                    <option>{{$surcategorie->getName()}}</option>
+                                @endforeach
+                            </select>
+                        </td>
                     </tr>
                     <tr>
                         <th><label for="categorie">Categorie</label></th>

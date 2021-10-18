@@ -5,13 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 
 /**
  * @property int $id
  * @property string $name
  * @property int $lot_id
+ * @property int|null $surcategorie_id
  * @property Collection|Lot[] $lots
+ * @property Surcategorie|null $surcategorie
  */
 
 class Categorie extends Model
@@ -65,12 +69,36 @@ class Categorie extends Model
         $this->lot_id = $lot_id;
     }
 
-
-    public function lots(): void
+    /**
+     * @return int|null
+     */
+    public function getSurcategorieId(): ?int
     {
-        $this->hasMany(Lot::class);
+        return $this->surcategorie_id;
     }
 
+    /**
+     * @param int|null $surcategorie_id
+     */
+    public function setSurcategorieId(?int $surcategorie_id): void
+    {
+        $this->surcategorie_id = $surcategorie_id;
+    }
 
+    /**
+     * @return HasMany
+     */
+    public function lots(): HasMany
+    {
+        return $this->hasMany(Lot::class);
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function surcategorie(): BelongsTo
+    {
+        return $this->belongsTo(Surcategorie::class);
+    }
 
 }
