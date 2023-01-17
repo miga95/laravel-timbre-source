@@ -30,6 +30,7 @@ class VenteController extends Controller
     public function postVente(Request $request){
         try {
             $file = $request->file('catalogue');
+            $fileName = '';
             if ($file) {
                 $fileName = $file->getClientOriginalName();
                 $file->storeAs('catalogue', $fileName);

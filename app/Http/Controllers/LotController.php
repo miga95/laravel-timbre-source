@@ -155,7 +155,6 @@ class LotController extends Controller
                 if ($filteredItem === 0) {
 //                    array_push($surcategories[0], $value);
                     $surcategories->add($value);
-
                 }
                 if ($filteredItem === 1) {
 //                    array_push($surcategories[1], $value);

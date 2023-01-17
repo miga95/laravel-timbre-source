@@ -57,6 +57,25 @@ class LotService
     }
 
     /**
+     * @param Vente $vente
+     * @return Collection
+     */
+    public function getSurcategoriesOfLastvente(Vente $vente): Collection
+    {
+        $lots = $vente->lots;
+        $surcategorieCollection = new Collection();
+        $surcategories = $lots->groupBy('surcategorie_id');
+
+        foreach ($surcategories as $surcategorieId => $values) {
+            $surcategorie = $this->surcategorieRepository->find($surcategorieId);
+            if (!$surcategorieCollection->contains('id', $surcategorieId)) {
+                $surcategorieCollection->add($surcategorie);
+            }
+        }
+        return $surcategorieCollection;
+    }
+
+    /**
      * @param Vente $lastVente
      * @return Collection|null
      */

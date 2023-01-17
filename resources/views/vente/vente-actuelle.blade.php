@@ -15,11 +15,12 @@
     <div class="w-3/5  mx-auto my-12 flex justify-around ">
         @foreach($surcategories as $surcategorieId => $value)
         <div class="w1/3">
+
             <h2 class=" mb-3 text-center text-2xl text-black">
                 <a href={{route('show-surcategories-of-last-vente',[
                     'venteId' => $lastVente->getId(),
-                    'surcategorieId' => $surcategorieId,
-                    'categorieId' => $value["categories"][0]->getId()
+                    'surcategorieId' => $value->getId(),
+                    'categorieId' => $value->getId()
                      ])}}>{{$value['name']}}</a>
 {{--                <a href="https://www.roumet.com">{{$surcategorie['name']}}</a>--}}
             </h2>

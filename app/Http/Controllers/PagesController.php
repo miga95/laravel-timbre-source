@@ -64,11 +64,7 @@ class PagesController extends Controller
     {
         $lastVente = $this->venteRepository->findLastVente();
         $lastLots = $lastVente->lots;
-        $surcategories = $this->lotService->getSurcategorieFromVente($lastVente);
-
-//        foreach ($surcategories as $surcategorie=>$value){
-//            dd($value["categories"][0]->getId());
-//        }
+        $surcategories = $this->lotService->getSurcategoriesOfLastvente($lastVente);
 
         return view('vente.vente-actuelle', compact('lastVente', 'surcategories', 'lastLots'));
     }

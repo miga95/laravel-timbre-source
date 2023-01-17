@@ -15,13 +15,13 @@ class MakeRelationsBetweenTables extends Migration
      */
     public function up()
     {
-//        Schema::table('lots', function(Blueprint $table){
-//
-//            $table->foreign('vente_id')->references('id')->on('ventes')->onDelete('set null');
-//            $table->foreign('surcategorie_id')->references('id')->on('surcategories')->onDelete('set null');
-//            $table->foreign('categorie_id')->references('id')->on('categories')->onDelete('set null');
-//
-//        });
+        Schema::table('lots', function(Blueprint $table){
+
+            $table->foreign('vente_id')->references('id')->on('ventes')->onDelete('set null');
+            $table->foreign('surcategorie_id')->references('id')->on('surcategories')->onDelete('set null');
+            $table->foreign('categorie_id')->references('id')->on('categories')->onDelete('set null');
+
+        });
 //        ini_set('memory_limit', '-1');
 //        $lots = Lot::all();
 //
